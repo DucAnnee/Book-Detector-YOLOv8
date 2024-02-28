@@ -4,6 +4,7 @@ import time
 
 model = YOLO('./yolo_weights/yolov8l-seg.pt')
 
+
 cap = cv.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720)
@@ -18,7 +19,7 @@ while cap.isOpened():
         total_time = end - start
         fps = 1/total_time
 
-        segmented_frame = results[0].plot()
+        segmented_frame = results[0].plot()        
 
         cv.imshow('Webcam', segmented_frame)
 
